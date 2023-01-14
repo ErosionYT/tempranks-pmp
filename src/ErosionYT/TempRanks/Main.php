@@ -11,7 +11,6 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as C;
-use _64FF00\PurePerms\PurePerms;
 use SQLite3;
 
 class Main extends PluginBase implements Listener
@@ -117,7 +116,7 @@ class Main extends PluginBase implements Listener
         if ($enddate === null) {
             return "No temprank";
         }
-        if (strtotime($enddate) > time()) {
+        if (strtotime($enddate) < time()) {
             return null;
         }
         $datetime1 = date_create($date);
