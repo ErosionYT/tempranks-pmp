@@ -117,7 +117,7 @@ class Main extends PluginBase implements Listener
         if ($enddate === null) {
             return "No temprank";
         }
-        if (strtotime($enddate) < time()) {
+        if (strtotime($enddate) > time()) {
             return null;
         }
         $datetime1 = date_create($date);
@@ -215,7 +215,6 @@ class Main extends PluginBase implements Listener
         $dt1 = new \DateTime("@0");
         $dt2 = new \DateTime("@$seconds");
         $diff = $dt1->diff($dt2);
-        if ($diff === false) return null;
         $str = [];
         if ($diff->y > 0) $str[] = $diff->y . ' year(s)';
         if ($diff->m > 0) $str[] = $diff->m . ' month(s)';
