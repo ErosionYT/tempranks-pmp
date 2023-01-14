@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/ErosionYT/tempranks-pmp
+build-by-default: true
+branches:
+- main
+projects:
+  tempranks-pmp:
+    path: ""
+...
