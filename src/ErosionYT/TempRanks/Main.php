@@ -19,6 +19,7 @@ class Main extends PluginBase implements Listener
 
     /* @var Config */
     public $config;
+    private SQLite3 $db;
 
     public function onEnable(): void
     {

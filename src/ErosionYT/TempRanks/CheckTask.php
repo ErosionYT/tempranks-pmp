@@ -7,11 +7,8 @@ use pocketmine\scheduler\Task;
 
 class CheckTask extends Task
 {
+    private Main $plugin;
 
-    /**
-     * CheckTask constructor.
-     * @param Main $param
-     */
     public function __construct(Main $plugin)
     {
         $this->plugin = $plugin;
@@ -25,7 +22,7 @@ class CheckTask extends Task
             $playername = $player->getName();
             $time = $this->plugin->getTimeLeft($playername);
             if($time === null) {
-                $rank = $pp->getUserDataMgr()->getGroup($pp->getPlayer($playername), );
+                $rank = $pp->getUserDataMgr()->getGroup($pp->getPlayer($playername));
                 $msg = str_replace("{temprank}", $rank, $msg);
                 $player->sendMessage($msg);
                 $this->plugin->removeRank($playername);
